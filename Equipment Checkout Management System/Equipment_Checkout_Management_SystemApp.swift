@@ -10,9 +10,12 @@ import SwiftData
 
 @main
 struct Equipment_Checkout_Management_SystemApp: App {
+    /// Persistent on-device store for all equipment, borrower, and checkout records.
     var sharedModelContainer: ModelContainer = {
         let schema = Schema([
-            Item.self,
+            Equipment.self,
+            Borrower.self,
+            Checkout.self,
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
 
